@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import Toast from "../../utils/Toast";
 import Table from 'react-bootstrap/Table';
-import "./table.scss";
+import "./index.scss";
 
 const TableForm = ({ products = [], onDeleteProduct, onEditProduct }) => {
   const handleDeleteButton = (id) => {
@@ -18,24 +18,22 @@ const TableForm = ({ products = [], onDeleteProduct, onEditProduct }) => {
 
   return (
     <div className="table">
-      <Table className="products-table" responsive>
+      <Table className="table__container" responsive>
         <thead>
           <tr key="table-head">
             <th>PRODUCT NAME</th>
-
             <th>COLOR</th>
-
             <th>CATEGORY</th>
-
             <th>PRICE</th>
-
             <th></th>
           </tr>
         </thead>
         <tbody>
           {!products.length && (
             <tr className="table-void">
-              <td className="table--void__td" colSpan="5">There are not products to show</td>
+              <td className="table--void__td" 
+                colSpan="5">There are not products to show
+              </td>
             </tr>
           )}
           {products.map((product) => (
@@ -73,10 +71,10 @@ const TableForm = ({ products = [], onDeleteProduct, onEditProduct }) => {
 
 
 TableForm.propTypes = {
-  products: PropTypes.array.isRequired, 
-  onDeleteProduct: PropTypes.func.isRequired, 
-  onEditProduct: PropTypes.func.isRequired, 
-  children: PropTypes.node 
+  products: PropTypes.array.isRequired,
+  onDeleteProduct: PropTypes.func.isRequired,
+  onEditProduct: PropTypes.func.isRequired,
+  children: PropTypes.node
 };
 
 export default TableForm;

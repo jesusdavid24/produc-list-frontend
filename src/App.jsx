@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ProductForm from "./components/ProductForm/ProductForm";
-import Header from "./components/Header/Header";
-import TableForm from "./components/Table/Table";
-import Contact from "./components/Contact/Contact";
+import ProductForm from "./components/ProductForm";
+import Header from "./components/Header";
+import TableForm from "./components/Table";
+import Contact from "./components/Contact";
 import "./App.scss";
 
 import { 

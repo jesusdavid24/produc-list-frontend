@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 import Toast from "../../utils/Toast";
 import Form from 'react-bootstrap/Form';
-import "./productForm.scss";
+import "./index.scss";
 
 const ProductForm = ({ title, onAddProduct, isEdit, productToEdit, onEditProduct, children }) => {
   const [product, setProduct] = useState({
@@ -81,61 +81,62 @@ const ProductForm = ({ title, onAddProduct, isEdit, productToEdit, onEditProduct
   };
 
   return (
-    <aside className="form-container">
-      <h1 className="form__title">{title}</h1>
+    <aside className="form">
+      <div className="form__container">
+        <h1 className="form__container__title">{title}</h1>
 
-      <form className="form" onSubmit={handleAdd}>
-        <label htmlFor="productName">PRODUCT NAME</label>
-        <input
-          type="text"
-          name="productName"
-          className="form__product-name"
-          onChange={handleChange}
-          placeholder="your product name"
-          value={product.productName}
-          autoComplete="off"
-        />
+        <form className="form__container__body" onSubmit={handleAdd}>
+          <label htmlFor="productName">PRODUCT NAME</label>
+          <input
+            type="text"
+            name="productName"
+            className="form__container__body__name"
+            onChange={handleChange}
+            placeholder="your product name"
+            value={product.productName}
+            autoComplete="off"
+          />
 
-        <label htmlFor="color">COLOR</label>
-        <input
-          type="text"
-          name="color"
-          className="form__product-color"
-          onChange={handleChange}
-          placeholder="silver, black, white, etc"
-          value={product.color}
-          title="Letters only"
-          autoComplete="off"
-        />
+          <label htmlFor="color">COLOR</label>
+          <input
+            type="text"
+            name="color"
+            className="form__container__body__color"
+            onChange={handleChange}
+            placeholder="silver, black, white, etc"
+            value={product.color}
+            title="Letters only"
+            autoComplete="off"
+          />
 
-        <label htmlFor="category">CATEGORY</label>
-        <Form.Select
-          aria-label="Default select example"
-          size="sm"
-          name="category"
-          className="form__product-category"
-          onChange={handleChange}
-        >
-          <option>Choose a category</option>
-          <option value="HOME">Home</option>
-          <option value="MUSIC">Music</option>
-          <option value="BABY">Baby</option>
-          <option value="BOOKS">Books</option>
-        </Form.Select>
+          <label htmlFor="category">CATEGORY</label>
+          <Form.Select
+            aria-label="Default select example"
+            size="sm"
+            name="category"
+            className="form__container__body__category"
+            onChange={handleChange}
+          >
+            <option>Choose a category</option>
+            <option value="HOME">Home</option>
+            <option value="MUSIC">Music</option>
+            <option value="BABY">Baby</option>
+            <option value="BOOKS">Books</option>
+          </Form.Select>
 
-        <label htmlFor="price">PRICE</label>
-        <input
-          type="number"
-          min={0}
-          name="price"
-          className="form__product-price"
-          onChange={handleChange}
-          placeholder="$1999.99"
-          value={product.price}
-        />
-
-        {children}
-      </form>
+          <label htmlFor="price">PRICE</label>
+          <input
+            type="number"
+            min={0}
+            name="price"
+            className="form__container__body__price"
+            onChange={handleChange}
+            placeholder="$1999.99"
+            value={product.price}
+          />
+          {children}
+        </form>
+      </div>
     </aside>
   );
 };

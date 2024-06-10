@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from 'prop-types';
 import logo from '../../assets/svg/logo.svg'
-import "./header.scss";
+import "./index.scss";
 
 const Header = ({ handleViewPage }) => {
   const [menu, setMenu] = useState(false);
@@ -21,22 +21,22 @@ const Header = ({ handleViewPage }) => {
 
   return (
     <header className="header">
-      <div className="pe-5 d-flex justify-content-between w-100 p-1">
-        <div className="logo-container" onClick={handlePage}>
-          <img id="logo" src={logo} className="header__logo" />
-          <h1 id="logo" className="header__title mt-2">
+      <div className="header__container">
+        <div className="header__container__logo" onClick={handlePage}>
+          <img id="logo" src={logo}/>
+          <h1 id="logo" className="header__container__logo__title">
             My Site
           </h1>
         </div>
-        <div className="menu-container">
-          <h2 className="header__message">Get started</h2>
-          <button className="header__open-menu" onClick={handleMenu}>
+        <div className="header__container__menu">
+          <h2 className="header__container__menu__message">Get started</h2>
+          <button onClick={handleMenu}>
             <i className="bi bi-list"></i>
           </button>
           {menu == true && (
-            <nav className="header__menu">
-              <button className="header__close-menu" onClick={handleMenu}>
-                <i className="bi bi-x x-button"></i>
+            <nav>
+              <button onClick={handleMenu}>
+                <i className="bi bi-x"></i>
               </button>
               <ul>
                 <li id="productsPage" onClick={handlePage}>
