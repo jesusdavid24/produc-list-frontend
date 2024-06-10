@@ -1,0 +1,83 @@
+.app-form {
+   display: flex;
+   flex-direction: row;
+   padding: 20px;
+   padding-right: 0;
+   margin-top: 20px;
+   margin-right: 50px;
+
+   .form__add-button {
+      width: 65px;
+      height: 40px;
+      align-self: flex-end;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      background-color: rgb(94, 143, 235);
+      cursor: pointer;
+   }
+
+   .edit-buttons-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+   }
+
+   .form__cancel-button,
+   .form__update-button {
+      width: 85px;
+      height: 40px;
+      align-self: flex-end;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      margin: 5px;
+      background-color: rgb(94, 143, 235);
+      cursor: pointer;
+   }
+   .form__cancel-button {
+      background-color: rgb(104, 103, 103);
+   }
+
+   .form__cancel-button:hover {
+      background-color: rgb(77, 76, 76);
+   }
+
+   .form__update-button {
+      background-color: rgb(65, 223, 54);
+   }
+
+   .form__update-button:hover {
+      background-color: rgb(44, 194, 34);
+   }
+}
+
+@media (max-width: 1024px) {
+   .app-form {
+      display: flex;
+      flex-direction:column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      padding-right: 0;
+      width: 100%;
+      margin-top: 40px;
+   }
+
+   .app-form .form__add-button {
+      width: 100%;
+      align-self: center;
+   }
+
+   .app-form .edit-buttons-container {
+      display: flex;
+      justify-content: center;
+   }
+}
